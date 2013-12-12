@@ -15,8 +15,8 @@ In our DB we store millions (soon billions) of words and different strings aside
 **Note:** all DB record was provided by users or taken from open dictionaries and digital libraries.
 
 #####Structure:
-* PHP Cache - (~10K records of super popular requests)
-* MySQL - (~200K records of popular and last requests)
+* PHP Cache - (~1K records of super popular requests)
+* MongoDB Special Indexed Collection (MDBSIC) - (~200K records of popular and last requests)
 * MongoDB - (~300M records of all requests)
 
 Any request goes thru PHP Cache -> MySQL -> MongoDB and vice versa.
@@ -29,9 +29,9 @@ That gives very high availability of any part of service.
 
 #####Reverse Decoding
 * Search for string provided by user in next order:
- - PHP Cache -> MySQL -> MongoDB
+ - PHP Cache -> MDBSIC -> MongoDB
 * If value is found on some level it will be added into lowest, in next order:
- - PHP Cache <- MySQL <- MongoDB
+ - PHP Cache <- MDBSIC <- MongoDB
 
 ------------
 
