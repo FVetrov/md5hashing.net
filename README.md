@@ -1,4 +1,4 @@
-* Website: [md5#hasing.net](http://md5hasing.net)
+* Website: [md5#hasing.net](http://md5hashing.net)
 * Changelog: [Versioning and functionality](https://github.com/FVetrov/md5hashing.net/wiki/Change-Log)
 * Discussion: [Report about bugs or suggest improvements](https://github.com/FVetrov/md5hashing.net/issues)
 
@@ -19,7 +19,7 @@ In our DB we store millions (soon billions) of words and different strings aside
 * MongoDB Special Indexed Collection (MDBSIC) - (~200K records of popular and last requests)
 * MongoDB - (~300M records of all requests)
 
-Any request goes thru PHP Cache -> MySQL -> MongoDB and vice versa.
+Any request goes thru PHP Cache -> MDBSIC -> MongoDB and vice versa.
 Keys for all storages is original string and MD5 hash (as most popular searchable value right now, later we may change it or make/add other keys)
 That gives very high availability of any part of service.
 
