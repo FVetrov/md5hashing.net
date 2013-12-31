@@ -25,7 +25,7 @@ That gives very high availability of any part of service.
 
 #####Encoding
 * String provided by user, or taken from open resource (dictionary, library), or even random generated string goes thru all supported hashing algorithms
-* Next we store string and it's hashes to PHP Cache, MySQL, MongoDB
+* Next we store string and it's hashes to PHP Cache, MongoDB
 
 #####Reverse Decoding
 * Search for string provided by user in next order:
@@ -36,12 +36,15 @@ That gives very high availability of any part of service.
 ------------
 
 ####Additional functionality
-#####Hash type checker
+#####[Hash type checker](http://md5hashing.net/hash_type_checker)
 Check based on Regular Expression
 Returns to user possible variants of hash type
 
-#####Password Generator
+#####[Password Generator](http://md5hashing.net/generate/password)
 * **Memorable and Human-readable** passwords based on word, and phrase library - we take random words and combine them in random order
 * **Random** password - we take letter, numbers and symbols and combine them in random order
+
+#####[Crypter](http://md5hashing.net/crypto)
+* Encrypt/Decrypt text (multi-line string) with salt / aka password
 
 For contacts, questions, suggestions please use - [GitHub Issues](https://github.com/FVetrov/md5hashing.net/issues)
