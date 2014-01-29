@@ -47,4 +47,12 @@ Returns to user possible variants of hash type
 #####[Crypter](http://md5hashing.net/crypto)
 * Encrypt/Decrypt text (multi-line string) with salt / aka password
 
+#####[Anonymous secure/crypto chat](http://md5hashing.net/crypto/chat)
+* Simple anonymous chat
+* Password protected
+* All messages is encrypted
+* No sign up/registration
+* No login (you need only chat name and password)
+* free iFrame plugin
+
 For contacts, questions, suggestions please use - [GitHub Issues](https://github.com/FVetrov/md5hashing.net/issues)
