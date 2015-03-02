@@ -40,6 +40,11 @@ That gives very high availability of any part of service.
 Check based on Regular Expression
 Returns to user possible variants of hash type
 
+#####[Disposable anonymous mailbox](http://md5hashing.net/anonymous/email)
+* Disposable mailbox
+* Random unlimited mailbox names (addresses)
+* Free of charge and does not require any registration
+
 #####[Password Generator](http://md5hashing.net/generate/password)
 * **Memorable and Human-readable** passwords based on word, and phrase library - we take random words and combine them in random order
 * **Random** password - we take letter, numbers and symbols and combine them in random order
@@ -54,5 +59,10 @@ Returns to user possible variants of hash type
 * No sign up/registration
 * No login (you need only chat name and password)
 * free iFrame plugin
+
+#####[Anonymous open chat](http://md5hashing.net/open/chat)
+* Simple anonymous and open chat
+* No sign up/registration
+* No login
 
 For contacts, questions, suggestions please use - [GitHub Issues](https://github.com/FVetrov/md5hashing.net/issues)
