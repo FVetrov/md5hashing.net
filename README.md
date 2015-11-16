@@ -1,37 +1,37 @@
 * Website: [md5#hasing.net](http://md5hashing.net)
 * Changelog: [Versioning and functionality](https://github.com/FVetrov/md5hashing.net/wiki/Change-Log)
 * Discussion: [Report about bugs or suggest improvements](https://github.com/FVetrov/md5hashing.net/issues)
+* Q&A: [Ask a question](https://md5hashing.net/QnA)
 
 --------------
 
 ####Few words:
-At md5hashing.net you can hash (encrypt, encode) any string into 47! different hash types. As you know - decryption of hash is impossible, but we offer reverse decryption via our database (~245M records, and counting). Additionally we offer Encryption with salt - this method allows to decode your string later (But you need to remember the SALT).
+At md5hashing.net you can hash (encrypt) any string into 66! different hash types. As you probably know - decryption of any hash is impossible, but we offer reverse decryption via our database (~800M records, and counting). Additionally we offer Encryption with password (salt) - this method allows to encrypt string with strongest algorithm and decrypt it later, you only need to remember the password (salt).
 
 --------------
 
 ####How it works:
-Main database is based on MongoDB.
-In our DB we store millions (soon billions) of words and different strings aside to their hash.
+We use stack of MongoDBs (shards + replicas).
+In our DB we store millions (soon billions) of strings aside to their hash.
 **Note:** all DB record was provided by users or taken from open dictionaries and digital libraries.
 
 #####Structure:
-* PHP Cache - (~1K records of super popular requests)
-* MongoDB Special Indexed Collection (MDBSIC) - (~200K records of popular and last requests)
-* MongoDB - (~300M records of all requests)
+1. Application fence
+2. Application nodes (round robin)
+3. MongoDB Shards
+4. MongoDB replicas
 
-Any request goes thru PHP Cache -> MDBSIC -> MongoDB and vice versa.
-Keys for all storages is original string and MD5 hash (as most popular searchable value right now, later we may change it or make/add other keys)
-That gives very high availability of any part of service.
+Special set of indexes used for best performance.
 
-#####Encoding
-* String provided by user, or taken from open resource (dictionary, library), or even random generated string goes thru all supported hashing algorithms
-* Next we store string and it's hashes to PHP Cache, MongoDB
+#####Hashing
+1. String goes thru all supported hashing algorithms
+2. Next we store string and it's hashes to available MongoDB replica, next going to be synchronised with all shards and replicas
 
-#####Reverse Decoding
-* Search for string provided by user in next order:
- - PHP Cache -> MDBSIC -> MongoDB
-* If value is found on some level it will be added into lowest, in next order:
- - PHP Cache <- MDBSIC <- MongoDB
+#####Crypto Chat
+1. User types new message
+2. Right before message is going to be sent to server it is encrypted with room's password
+3. When other users received new message it's going to be decrypted with room's password
+4. Decrypted message shown to all participants
 
 ------------
 
@@ -43,14 +43,18 @@ Returns to user possible variants of hash type
 #####[Disposable anonymous mailbox](http://md5hashing.net/anonymous/email)
 * Disposable mailbox
 * Random unlimited mailbox names (addresses)
+* Support all king of 
 * Free of charge and does not require any registration
 
+#####[Cryptography Questions & Answers](http://md5hashing.net/QnA)
+* Ask a question about cryptography anonymously
+* Get the best solution from community members
+
 #####[Password Generator](http://md5hashing.net/generate/password)
-* **Memorable and Human-readable** passwords based on word, and phrase library - we take random words and combine them in random order
-* **Random** password - we take letter, numbers and symbols and combine them in random order
+* **Memorable and Human-readable** passwords based on word generator library
 
 #####[Crypter](http://md5hashing.net/crypto)
-* Encrypt/Decrypt text (multi-line string) with salt / aka password
+* Encrypt/Decrypt text (multi-line string) with salt / a.k.a. password
 
 #####[Anonymous secure/crypto chat](http://md5hashing.net/crypto/chat)
 * Simple anonymous chat
@@ -58,7 +62,9 @@ Returns to user possible variants of hash type
 * All messages is encrypted
 * No sign up/registration
 * No login (you need only chat name and password)
-* free iFrame plugin
+* Free iFrame plugin
+* Open rooms
+* Message variable TTL
 
 #####[Anonymous open chat](http://md5hashing.net/open/chat)
 * Simple anonymous and open chat
