@@ -5,6 +5,10 @@
 
 --------------
 
+<iframe src="http://md5hashing.net/crypto/chat/room/sr35nEpZSSEbGSeT6/iframe" frameborder="0" style="min-height:320px;border:none"></iframe>
+
+-------------
+
 ####Few words:
 At md5hashing.net you can hash (encrypt) any string into 66! different hash types. As you probably know - decryption of any hash is impossible, but we offer reverse decryption via our database (~800M records, and counting). Additionally we offer Encryption with password (salt) - this method allows to encrypt string with strongest algorithm and decrypt it later, you only need to remember the password (salt).
 
