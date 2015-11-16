@@ -3,10 +3,6 @@
 * Discussion: [Report about bugs or suggest improvements](https://github.com/FVetrov/md5hashing.net/issues)
 * Q&A: [Ask a question](https://md5hashing.net/QnA)
 
---------------
-
-<iframe src="http://md5hashing.net/crypto/chat/room/sr35nEpZSSEbGSeT6/iframe" frameborder="0" style="min-height:320px;border:none"></iframe>
-
 -------------
 
 ####Few words:
